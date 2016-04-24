@@ -53,7 +53,7 @@ function startWorkers(){
 }
 
 function downloadBacklog(){
-  watchlist.downloadBacklog((m) => {
+  watchlist.downloadBacklog(Date.now(), (m) => {
              jobs.create('imdb watchlist movie', {
                title: m.title, 
                movie: m

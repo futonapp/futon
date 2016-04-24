@@ -1,14 +1,13 @@
 'use strict';
 
 class AbstractWatchlist {
-  name(){}
-
+  get meta(){
+    throw('subclass must implement this method');
+  }
   test(callback){
     throw('subclass must implement this method');
   }
-
-  downloadBacklog(){
-    // return Readable
+  downloadBacklog(lastCheckedAt, iterator){
     throw('subclass must implement this method');
   }
 }

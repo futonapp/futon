@@ -63,31 +63,32 @@ class Imdb extends AbstractWatchlist {
     });
   }
 
-  downloadBacklog(){
-    var stream     = Readable(),
-        currentUrl = this.watchlistUrl;
-    
-    stream._read = _ => {
+  downloadBacklog(lastCheckedAt, iterator){
+    return new Promise((fulfill, reject) => {
+      var currentUrl = this.watchlistUrl;
       logger.debug('crawling watchlist url: ' + currentUrl);
-
       if (currentUrl){
         crawlWatchlist(currentUrl, (error, response) => {
           if (error){
             logger.error(error);
-            stream.emit('error', error);
-            stream.push(null);
+            reject(error);
             return;
           }
           currentUrl = response.nextPage;
           logger.info('got ' + response.movies.length + ' movies');
-          stream.push(JSON.stringify(response.movies));
+          response.movies.forEach(movie => {
+            if (!movie.title || !movie.year || !movie.imdb_id){
+              logger.warn('ignoring', movie);
+              return;
+            }
+            iterator(movie);
+          });
         });
       }
       else {
-        return stream.push(null);
+        fulfill();
       }
-    };
-    return stream;
+    });  
   }
 }
 
