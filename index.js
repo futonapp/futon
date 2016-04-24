@@ -7,7 +7,7 @@ var backend           = require('./backend'),
     path              = require('path');
 
 models.initialize()
-      .then(webserver.start())
+      .then(webserver.start)
       .catch((e) => {
         logger.error('caught error', e.message);
       });

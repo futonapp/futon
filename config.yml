@@ -13,7 +13,7 @@ downloaders:
 #
 watchlists:
   - type: imdb
-    url: http://www.imdb.com/user/ur34552897/watchlist
+    url: http://www.imdb.com/user/ur34552897/watchlist?title_type=movie
 
 #
 # Torrent Aggregator

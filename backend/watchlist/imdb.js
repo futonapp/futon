@@ -45,9 +45,17 @@ function crawlWatchlist(watchlistUrl, callback){
 }
 
 class Imdb extends AbstractWatchlist {
-  constructor(){
+  constructor(options){
     super();
-    this.watchlistUrl = "http://www.imdb.com/user/ur34552897/watchlist?title_type=movie";
+    this.watchlistUrl = options.url;
+  }
+
+  toJSON(){
+    return {
+      id:           `ImdbWatchlist(${this.watchlistUrl})`,
+      class_name:   'Imdb',
+      url:          this.watchlistUrl
+    }
   }
 
   test(callback){
