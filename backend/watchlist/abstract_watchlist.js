@@ -1,6 +1,6 @@
 'use strict';
 
-class AbstractBase {
+class AbstractWatchlist {
   name(){}
 
   test(callback){
@@ -13,4 +13,4 @@ class AbstractBase {
   }
 }
 
-module.exports = AbstractBase;
+module.exports = AbstractWatchlist;

@@ -1,11 +1,11 @@
 'use strict';
 
-var AbstractBase  = require('./abstract_base'),
-    jsdom         = require('jsdom'),
-    request       = require('superagent'),
-    url           = require('url'),
-    logger        = require('../logger').getLogger('Watchlist::IMDB'),
-    Readable      = require('stream').Readable;
+var AbstractWatchlist  = require('./abstract_watchlist'),
+    jsdom              = require('jsdom'),
+    request            = require('superagent'),
+    url                = require('url'),
+    logger             = require('../logger').getLogger('Watchlist::IMDB'),
+    Readable           = require('stream').Readable;
 
 function parseWatchlistReponse($){
   var results = [];
@@ -44,7 +44,7 @@ function crawlWatchlist(watchlistUrl, callback){
   );
 }
 
-class Imdb extends AbstractBase {
+class Imdb extends AbstractWatchlist {
   constructor(){
     super();
     this.watchlistUrl = "http://www.imdb.com/user/ur34552897/watchlist?title_type=movie";

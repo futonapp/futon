@@ -1,8 +1,8 @@
 'use strict';
 
 var database          = require('./database'),
-    movieAggregator   = require('../movie_aggregator'),
-    torrentAggregator = require('../torrent_aggregator'),
+    moviedb           = require('../moviedb'),
+    searcher          = require('../searcher'),
     Sequelize         = require('sequelize'),
     Torrent           = require('./torrent'),
     logger            = require('../logger').getLogger('Movie'),
@@ -65,7 +65,7 @@ var Movie = database.define('movie', {
         var movieAttribs = {
           imdb_id: this.imdb_id
         };
-        movieAggregator.enrich(movieAttribs, (e, movie) => {
+        moviedb.enrich(movieAttribs, (e, movie) => {
           if (e){
             reject(e);
             return;
@@ -91,7 +91,7 @@ var Movie = database.define('movie', {
     },
     fetchTorrents: function(){
       return new Promise((fulfill, reject) => {
-        torrentAggregator.search(`imdb:${this.imdb_id.replace('tt', '')}`, (e, torrents) => {
+        searcher.search(`imdb:${this.imdb_id.replace('tt', '')}`, (e, torrents) => {
           console.log(torrents.length);
           if (e){
             reject(e);

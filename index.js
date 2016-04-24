@@ -8,19 +8,6 @@ var backend           = require('./backend'),
 
 models.initialize()
       .then(webserver.start())
-      // .then(_ => {
-      //   models.Movie
-      //         .findById(2)
-      //         .then(movie => { 
-      //           movie.getTorrents()
-      //                .then((torrents) => {
-      //                  torrents.forEach(torrent => {
-      //                    torrent.parseTitle();
-      //                  });
-      //                });
-
-      //         });
-      // })
       .catch((e) => {
         logger.error('caught error', e.message);
       });

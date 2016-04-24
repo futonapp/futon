@@ -1,6 +1,6 @@
 'use strict';
 
-class AbstractBase {
+class AbstractSearcher {
   test(callback){
     throw('subclass must implement this method');
   }
@@ -10,4 +10,4 @@ class AbstractBase {
   }
 }
 
-module.exports = AbstractBase;
+module.exports = AbstractSearcher;

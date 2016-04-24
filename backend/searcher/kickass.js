@@ -1,12 +1,12 @@
 'use strict';
 
-var request      = require('request'), 
-    zlib         = require('zlib'),
-    parseString  = require('xml2js').parseString,
-    AbstractBase = require('./abstract_base'),
-    logger       = require('../logger').getLogger('TorrentAggregator::Kickass');
+var request          = require('request'), 
+    zlib             = require('zlib'),
+    parseString      = require('xml2js').parseString,
+    AbstractSearcher = require('./abstract_searcher'),
+    logger           = require('../logger').getLogger('TorrentAggregator::Kickass');
 
-class Kickass extends AbstractBase {
+class Kickass extends AbstractSearcher {
   buildQuery(movie){
     return movie.title;
   }

@@ -1,10 +1,10 @@
 'use strict';
 
-var request        = require('superagent'), 
-    AbstractBase   = require('./abstract_base'),
-    logger         = require('../logger').getLogger('MovieAggregator::OMDB');
+var request          = require('superagent'), 
+    AbstractMovieDB  = require('./abstract_moviedb'),
+    logger           = require('../logger').getLogger('MovieAggregator::OMDB');
 
-class Omdb extends AbstractBase {
+class Omdb extends AbstractMovieDB {
   test(callback){
     this.search("the revenant", function(e, movies){
       if (e){
