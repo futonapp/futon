@@ -1,0 +1,29 @@
+#
+# Downloaders
+#
+downloaders: 
+  - type: transmission
+    host: localhost
+    port: 5051
+    username: admin
+    password: admin
+
+#
+# Watchlists
+#
+watchlists:
+  - type: imdb
+    url: http://www.imdb.com/user/ur34552897/watchlist
+
+#
+# Torrent Aggregator
+#
+torrent_aggregators:
+  - type: kickass
+    url: https://kat.cr
+
+#
+# Webserver
+#
+webserver:
+  port: 3000
