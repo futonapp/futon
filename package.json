@@ -1,10 +1,10 @@
 {
-  "name": "notekeeper",
-  "version": "0.0.0",
+  "name": "futon",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/mocha/bin/mocha test/*.js test/**/*.js --require test/test_helpers.js --watch",
     "start": "node ."
   },
   "author": "",
@@ -53,10 +53,13 @@
     "immutable": "^3.8.1",
     "jquery": "^2.2.1",
     "minivents": "^2.0.1",
+    "mocha": "^2.4.5",
     "moment": "^2.12.0",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
     "sassline": "^2.1.2",
+    "should": "^8.3.1",
+    "sinon": "^1.17.3",
     "sizzle": "^2.3.0",
     "superagent": "^1.8.3",
     "takana": "^0.5.4",

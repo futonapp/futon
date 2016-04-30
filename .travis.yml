@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "0.10"
+script: 'node_modules/mocha/bin/mocha test/*.js test/**/*.js --require test/test_helpers.js'
+cache:
+  directories:
+    - node_modules

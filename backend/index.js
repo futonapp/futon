@@ -1,4 +1,3 @@
-
 'use strict';
 
 module.exports = {
@@ -9,5 +8,4 @@ module.exports = {
   watchlist:       require('./watchlist'),
   webserver:       require('./webserver'),
   worker:          require('./worker')
-
 }
