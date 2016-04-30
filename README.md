@@ -1,5 +1,7 @@
 # Futon
 
+[![Build Status](https://api.travis-ci.org/futonapp/futon.svg?branch=master&style=flat)](https://travis-ci.org/futonapp/futon)
+
 Download movies from your IMDB watchlist automatically, effortlessly and in the best possible quality as soon as they become available. Set & forget!
 
 ### Description
